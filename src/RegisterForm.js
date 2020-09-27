@@ -39,7 +39,7 @@ const RegisterForm = (props) => {
         'Content-Type': 'application/json'
       }
     }
-    fetch("http://localhost:9000/create-user",sendmethod)
+    fetch("https://beel-buddy-backend.herokuapp.com/create-user",sendmethod)
   }
 
   //form function

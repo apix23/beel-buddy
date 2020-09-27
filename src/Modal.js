@@ -5,7 +5,7 @@ const Modal = ({person, show, closeModal, tableData}) => {
   let history = useHistory();
   //Function to disable a user from the modal
   const disableUser = (person) => {
-    const url = "http://localhost:9000/disable-user";
+    const url = "https://beel-buddy-backend.herokuapp.com/disable-user";
     const data = {
       isBuddy: person.im_a_buddy,
       id: person.id
