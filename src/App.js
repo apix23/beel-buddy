@@ -5,6 +5,8 @@ import StudentForm from "./StudentForm"
 import Homepage from './Homepage';
 import ThankYou from './ThankYou';
 import Login from './Login';
+import Footer from "./Footer";
+import BrokenLink from './BrokenLink'
 import ProtectedRoute from './ProtectedRoute';
 
 import {
@@ -19,7 +21,8 @@ function App(){
   return(
     <div className="App">
         
-        <Router>
+       <div className="main-container">
+       <Router>
         <Switch>
             <Route exact path="/">
               <Homepage />
@@ -40,9 +43,13 @@ function App(){
               path="/AdminTable"
               component={AdminTable}
             />
+            <Route path="*">
+              <BrokenLink/>
+            </Route>
           </Switch>
       </Router>
-            
+       </div>
+        <Footer/>
     </div>
   );
 }

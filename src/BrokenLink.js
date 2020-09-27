@@ -11,7 +11,7 @@ const BrokenLink = () =>{
                 <h1> Er is iets misgegaan, we kunnen deze pagina niet weergeven</h1>
                 <img className="error404" src={error404} alt="beelbuddies logo broken displaying 404 number below it" />
             </div>
-            <Footer />
+            
         </div>
     )
 

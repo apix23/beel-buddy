@@ -95,6 +95,10 @@ header {
   margin: auto;
 }
 
+.main-container {
+  min-height: 100vh;
+}
+
 .homepage h1 {
   margin-top: 122px;
 }
@@ -112,15 +116,18 @@ header {
 }
 
 .homepage-button-container {
-  margin-top: 82px;
+  margin-top: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: 5%;
-  margin-top: 10%;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+}
+
+.homepage-button-container .big-button {
+  width: 260px;
+  margin: 20px;
 }
 
 .thank-you-container {
@@ -162,10 +169,9 @@ header {
 }
 
 .jumbotroncontainer {
-  position: absolute;
   width: 100%;
   height: 500px;
-  background-image: url("Images/viejita.png");
+  background-image: url(../Images/viejita.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0% 25%;
@@ -176,47 +182,13 @@ header {
 }
 
 .aboutus {
-  position: absolute;
-  width: 655px;
-  height: 474px;
-  left: 100px;
-  top: 642px;
-  background: #FFFFFF;
-  border-radius: 10px;
-  padding: 10px 10px 10px 10px;
-  margin: 20px;
-  margin-bottom: 20%;
-  text-align: center;
+  margin: 0 auto;
+  padding-top: 48px;
+  max-width: 990px;
 }
 
-.expect {
-  position: absolute;
-  width: 315px;
-  height: 229px;
-  left: 902px;
-  top: 630px;
-  border-bottom: 1px solid #2B313A;
-  padding-bottom: 50px;
-  margin: 20px;
-}
-
-.team {
-  position: absolute;
-  width: 315px;
-  height: 229px;
-  left: 902px;
-  top: 900px;
-  margin: 20px;
-  background: #FFFFFF;
-}
-
-.team-title {
-  position: relative;
-  margin-left: 0px;
-}
-
-.white-text {
-  color: #FFFFFF;
+.aboutus h2, .aboutus h3 {
+  text-align: left;
 }
 
 /*--------------Importing the Roboto Font--------------*/
@@ -249,9 +221,65 @@ h3 {
   line-height: 19px;
 }
 
+.text-r {
+  text-align: right;
+}
+
 .small-text {
   font-size: 12px;
   line-height: 14px;
+}
+
+.color-p {
+  color: #00A1E2;
+}
+
+.color-s {
+  color: #A6ACBE;
+}
+
+.color-w {
+  color: #FFFFFF;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.row *, .row *:before, .row *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.col-50 {
+  width: 50%;
+}
+
+.col-70 {
+  width: 70%;
+}
+
+.col-30 {
+  width: 30%;
+}
+
+.col {
+  padding-right: 25px;
+}
+
+.col:last-child {
+  padding-right: 0;
+}
+
+@media (max-width: 600px) {
+  .col {
+    padding-right: 0;
+    width: 100%;
+  }
 }
 
 .small-buttons-container {
@@ -291,7 +319,7 @@ a, button, .button {
 }
 
 .big-button {
-  width: 280px;
+  width: 260px;
   color: #FFFFFF;
   background-color: #00A1E2;
 }
@@ -491,11 +519,6 @@ input[type=date] {
           flex-direction: column;
 }
 
-label {
-  color: #FFFFFF;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-
 table {
   margin-top: 22px;
   border-spacing: 0;
@@ -595,6 +618,16 @@ select:focus {
   outline: none;
 }
 
+.border-b {
+  border-bottom: 1px solid #A6ACBE;
+}
+
+.card {
+  border-radius: 10px;
+  padding: 35px;
+  background: #FFFFFF;
+}
+
 .modalcontainer {
   position: absolute;
   width: 550px;
@@ -603,7 +636,6 @@ select:focus {
   margin-top: -240px;
   margin-left: -275px;
   left: 50%;
-  background-color: #FFFFFF;
   border-radius: 6px;
   border: 1px solid #16BC84;
   -webkit-box-sizing: border-box;
@@ -719,6 +751,9 @@ select:focus {
 }
 
 .hobbiebox {
+  overflow-x: scroll auto;
+  overflow-y: scroll auto;
+  border-bottom: 0%;
   width: 438px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -730,32 +765,39 @@ select:focus {
   padding-bottom: 0%;
 }
 
-.underlined {
-  border-bottom: 1px solid #c4c4c4;
-}
-
 .footer {
-  position: fixed;
-  bottom: 0;
+  position: relative;
+  margin-top: 48px;
+  padding: 24px 0 12px 0;
   height: 50px;
-  margin-top: 50px;
-  width: 100%;
-  height: 70px;
+  max-width: 100%;
   background-color: #333333;
 }
 
-.migracode {
+.footer a {
+  margin: 0;
+  height: 0;
+  width: 0;
+  display: inline-block;
   position: absolute;
-  width: 107px;
-  left: 85%;
-  bottom: -23%;
 }
 
 .universidad {
-  position: absolute;
+  left: 24px;
+}
+
+.universidad img {
   width: 107px;
-  left: 15%;
-  bottom: 38%;
+  height: auto;
+}
+
+.migracode {
+  right: 132px;
+}
+
+.migracode img {
+  width: 107px;
+  height: auto;
 }
 
 .jumbotron-image {

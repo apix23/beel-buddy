@@ -66,7 +66,7 @@ const AdminTableFetcher = props => {
                             <input type="radio" name="radio-table"/> 
                             All
                         </label>
-
+{/*
                         <label className="table-button" onClick={seeMatched}>
                             <input type="radio" name="radio-table"/> 
                             Matched
@@ -76,8 +76,8 @@ const AdminTableFetcher = props => {
                             <input type="radio" name="radio-table"/> 
                             Un-matched
                         </label>
+*/}
                     </form>
-
                     <AdminTable data={tableData}/>
 
                 </div>
@@ -128,7 +128,7 @@ const AdminTable = props => {
                             <th className="hometown-column">Hometown</th>
                             <th className="hobbies-column">Hobbies/Interest</th>
                             <th className="buddy-column">Buddy or patient?</th>
-                            <th className="name-column">Match</th>
+                            {/* <th className="name-column">Match</th> */}
                         </tr>
                     </thead>
 
@@ -154,7 +154,7 @@ const AdminTable = props => {
                                 <td className="hometown-column">{person.hometown}</td>
                                 <td className="hobbies-column">{person.hobbiesandinterests}</td>
                                 <td className="buddy-column">{buddy_patient}</td>
-                                <td className="name-column">{matchName}</td>
+                                {/* <td className="name-column">{matchName}</td> */}
                             </tr>
                         )
                     }) } 

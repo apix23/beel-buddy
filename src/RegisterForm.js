@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import Hands from './Images/Hands.jpg';
+// import Hands from './Images/Hands.jpg';
 
 const RegisterForm = (props) => {
 
@@ -47,7 +47,7 @@ const RegisterForm = (props) => {
 
   return (
     <div>
-    <img className="formwrapper" src={Hands} alt="arms reaching for grasping eachother"/>
+    {/* <img className="formwrapper" src={Hands} alt="arms reaching for grasping eachother"/> */}
         <form onSubmit={onSubmit} >
           <div className="fadein1">
             <label htmlFor="name">Voornaam en achternaam</label>
