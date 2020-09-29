@@ -11,6 +11,8 @@ const RegisterForm = (props) => {
     email: "",
     hobbies: "",
     hometown: "",
+    study: "",
+    studyYear:"",
     im_a_buddy:0,
   });
   console.log(props);
@@ -81,14 +83,35 @@ const RegisterForm = (props) => {
           </div>
 
           <div className="fadein4">
-            <label htmlFor="hometown">  Geboorteplaats </label>
+            <label htmlFor="hometown">  Woonplaats </label>
             <input
             name= "hometown"
-            placeholder="Geboorteplaats"
+            placeholder="Woonplaats"
             value={state.hometown}
             onChange={onChange}
             required/>
           </div>
+          { props.value === 1 ? 
+            <div className="fadein6">
+             <label htmlFor="study"> Studie </label>
+             <input 
+             name= "study"
+             placeholder= "Studie"
+             value={state.study}
+             onChange={onChange}
+             required />
+             </div> :null }
+
+             { props.value === 1 ?
+             <div className="fadein7">
+               <label htmlFor="studyYear"> Studiejaar </label>
+               <input 
+               name="studyYear"
+               placeholder="Studiejaar"
+               value={state.StudyYear}
+               onChange={onChange}
+               required />
+             </div>: null }
 
           <div className="fadein5">
             <label htmlFor="hobbies">Hobby's en interesses</label>
@@ -99,6 +122,7 @@ const RegisterForm = (props) => {
             onChange={onChange}
             required/>
           </div>
+
         <input type="number" 
         className="im_a_buddy"
         name="im_a_buddy" 
@@ -106,6 +130,7 @@ const RegisterForm = (props) => {
         value={props.value}
         onChange={onChange}
         />
+
         </div>
           <button type="submit" className="big-button">Verzenden</button>
         </form>
