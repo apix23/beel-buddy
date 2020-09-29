@@ -49,7 +49,7 @@ const AdminTableFetcher = props => {
                 <HeaderAdmin />
 
                 <div className="container-form">
-                    <h1>Table of participants</h1>
+                    <h1>Tafel met deelnemers</h1>
 
                     <form className="table-button-container">
                         <label className="table-button" onClick={seeBuddies}>
@@ -59,12 +59,12 @@ const AdminTableFetcher = props => {
 
                         <label className="table-button" onClick={seePatients}>
                             <input type="radio" name="radio-table"/> 
-                            Patients
+                            Patiënten
                         </label>
 
                         <label className="table-button" onClick={seeAll}>
                             <input type="radio" name="radio-table"/> 
-                            All
+                            Alle
                         </label>
 {/*
                         <label className="table-button" onClick={seeMatched}>
@@ -122,12 +122,12 @@ const AdminTable = props => {
                 <table id="tableId">
                     <thead>
                         <tr>
-                            <th className="name-column">Name</th>
-                            <th className="age-column">Age</th>
+                            <th className="name-column">Naam</th>
+                            <th className="age-column">Leeftijd</th>
                             <th className="email-column">Email</th>
-                            <th className="hometown-column">Hometown</th>
-                            <th className="hobbies-column">Hobbies/Interest</th>
-                            <th className="buddy-column">Buddy or patient?</th>
+                            <th className="hometown-column">Woonplaats</th>
+                            <th className="hobbies-column">Hobby's / interesse</th>
+                            <th className="buddy-column">Buddy of patiënt?</th>
                             {/* <th className="name-column">Match</th> */}
                         </tr>
                     </thead>
