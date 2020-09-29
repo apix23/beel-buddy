@@ -7,7 +7,7 @@ const BuddiesForm = () =>  {
                 <Header />
                 <div className="container-form">
                     <h1> Ik wil een maatje worden</h1>
-                    <h2> I am a social service student </h2>
+                    <h2> Ik ben een student sociale dienst </h2>
                     <RegisterForm value={1}/>
                     
                 </div>

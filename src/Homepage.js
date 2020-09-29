@@ -8,7 +8,7 @@ const Homepage = () => {
             <Header />
                 <div className="jumbotroncontainer">
                     <div className="container-form color-w">
-                        <h1 className="white-text">Welkom op de beelbuddy</h1> 
+                        <h1 className="white-text">Welkom op de beeldbuddy</h1> 
                             <h2 className="white-text"> Leuk dat je interesse hebt in het worden van een buddy!</h2>
                             <div className="homepage-button-container">
                                 <Button route="/BuddiesForm" buttonType="big" text="Ik ben een maatje" />
@@ -19,7 +19,7 @@ const Homepage = () => {
                 <div className="row aboutus">
                     <div className="col-70 col">
                         <div className="card">
-                            <h2 className="color-p"> Beelbuddy </h2>
+                            <h2 className="color-p"> Beeldbuddy </h2>
                             <p> Deze site is ontstaan vanuit de gevolgen die het coronavirus heeft op studenten en mensen met een hulpvraag. 
                                 Studenten Social work konden door het coronavirus niet meer op bezoek bij hun maatjes en de maatjes mochten geen studenten meer ontvangen en konden vaak ook niet naar hun werk en dagbesteding, een erg vervelende tijd.</p> 
 
