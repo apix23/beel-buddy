@@ -8,7 +8,6 @@ const StudentForm = () => {
             <Header />
                 <div className="container-form">
                 <h1> Ik wil een maatje</h1>
-                <h2> Ik wil een studentenmaatje van de sociale dienst</h2>
                 <RegisterForm value={0}/>
                 
             </div>

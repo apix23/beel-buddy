@@ -1,12 +1,25 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Modal from './Modal';
 import HeaderAdmin from './HeaderAdmin';
+import { Redirect } from 'react-router-dom';
 
 const baseUrl = "https://beel-buddy-backend.herokuapp.com/";
 
 const AdminTableFetcher = props => {
     const [tableData, setTableData] = React.useState(null);
     const [mainArray, setMainArray] = React.useState(null);
+
+    const token = localStorage.getItem("token");
+    console.log(token);
+
+    const  [loggedIn, setLoggedIn] = useState(true);
+    
+        useEffect(() => {
+            if (token === null) {
+                
+                setLoggedIn(false)
+                }
+        }, [token])
 
     const seeBuddies = () => {
         const filteredData = mainArray.filter( element => element.im_a_buddy === 1);
@@ -32,20 +45,55 @@ const AdminTableFetcher = props => {
         setTableData(mainArray);
     }
 
-    React.useEffect(() => {
-        console.log("I'm fetching")
-        fetch(`${baseUrl}get-table`)
-            .then(response => response.json())
-            .then(data => {setTableData(data); setMainArray(data)})
-            .catch(rejected => console.log(rejected))
-    }, []);
+    const removeDuplicatesFromArr = arr => {
+        if(arr) {
 
-    return (
+            //Array with the number of occurrences for each person
+            const arrWithoutDuplicates = [];
+        
+            arr.map( element => {
+              //If the element does not exist in the array, result will be undefined
+              const result = arrWithoutDuplicates.find( el => el.id === element.id && el.im_a_buddy === element.im_a_buddy );
+              
+              if(result) {
+                //The element has been already counted before, so we do nothing
+        
+              } else {
+                //The element has not been counted, so we add it to the array
+                arrWithoutDuplicates.push(element);
+              }
+            })
+            
+            return arrWithoutDuplicates;
 
-        !tableData ? 
-            (<p>Loading...</p>) 
-        : (
-            <div className="">
+        }
+      }
+
+      
+      React.useEffect(() => {
+          console.log("I'm fetching")
+          fetch(`${baseUrl}get-table`)
+          .then(response => response.json())
+          .then(data => {setTableData(data); setMainArray(data)})
+          .catch(rejected => console.log(rejected))
+        }, []);
+    
+    const filteredArr = removeDuplicatesFromArr(tableData);
+        
+    
+    if (loggedIn === false) {
+        
+        return <Redirect to="404"/>
+    }
+
+    else{
+
+        return (
+            
+            !tableData ? 
+              (<p>Loading...</p>) 
+            : (
+                <div className="">
                 <HeaderAdmin />
 
                 <div className="container-form">
@@ -59,14 +107,14 @@ const AdminTableFetcher = props => {
 
                         <label className="table-button" onClick={seePatients}>
                             <input type="radio" name="radio-table"/> 
-                            Patients
+                            Patiënten
                         </label>
 
                         <label className="table-button" onClick={seeAll}>
                             <input type="radio" name="radio-table"/> 
-                            All
+                            Alle
                         </label>
-{/*
+
                         <label className="table-button" onClick={seeMatched}>
                             <input type="radio" name="radio-table"/> 
                             Matched
@@ -76,27 +124,81 @@ const AdminTableFetcher = props => {
                             <input type="radio" name="radio-table"/> 
                             Un-matched
                         </label>
-*/}
+
                     </form>
-                    <AdminTable data={tableData}/>
+                    <AdminTable filtData={filteredArr} data={tableData}/>
 
                 </div>
             </div> 
         )
-    )
+        )
+    }
 }
 
 
 
 const AdminTable = props => {
 
-    // props.updateData("AdminTable");
+    //This function returns an array with the matchnames for each person
+    const getMultipleMatchesArray = (tableData) => {
+        console.log("entering in getmultiplematchesarray with tabledata", tableData);
+        if(tableData) {
+            //Array with the number of occurrences for each person
+        const occurrenceNumArr = [];
+    
+        tableData.map( element => {
+          //If the element does not exist in the array, result will be undefined
+          const result = occurrenceNumArr.find( el => el.id === element.id && el.isBuddy === element.im_a_buddy );
+          
+          if(result) {
+            //The element has been already counted before, so we increase the counter and add the name to the matchName array
+            
+            result.numberOfRepeats++;
+            result.matchName.push(element.matchname);
+    
+          } else {
+            //The element has not been counted, so we add it to the array
+            occurrenceNumArr.push({
+              isBuddy: element.im_a_buddy,
+              id: element.id,
+              numberOfRepeats: 1,
+              matchName: [element.matchname]
+            })
+          }
+        })
+    
+        //Creates an array with the id of the user and a string with all the matches
+        const matchesArray = occurrenceNumArr.map(element => {
+          return {
+            isBuddy: element.isBuddy,
+            id: element.id,
+            matches: element.matchName.join(', ')
+          };
+        });
+    
+        return matchesArray;
+        }
 
+        
+    }
+
+    //This function returns all the matches for an user
+    const getMatchesByUser = (id, isBuddy, arr) => {
+    console.log("im receiving the following values. id", id, "isBuddy", isBuddy, "arr", arr);
+    if(id != undefined && isBuddy != undefined && arr != undefined){
+        const matches = arr.find(element => element.id === id && element.isBuddy == isBuddy).matches; 
+        console.log(`The matches for the id ${id} and isBuddy ${isBuddy} are: ${matches}`);
+        
+        return matches;
+    }
+    }
+
+    //Function to calculate the age
     function calculate_age(dateofbirth) { 
         const date = new Date(dateofbirth);
         var diff_ms = Date.now() - date.getTime();
         var age_dt = new Date(diff_ms); 
-      
+    
         return Math.abs(age_dt.getUTCFullYear() - 1970);
     }
 
@@ -105,9 +207,8 @@ const AdminTable = props => {
     const [show, setShow] = useState(false);
     const [person, setPerson] = useState({});
 
-    const showModal = (person, buddy_patient) =>{
-        console.log("I'm receiving the modal person >>>>>", person, " buddy >>>>>>>>>", buddy_patient);
-        setPerson(person);
+    const showModal = (person, matches) =>{
+        setPerson({...person, match: matches});
         setShow(true);
     }
 
@@ -115,25 +216,36 @@ const AdminTable = props => {
         setShow(false);
     }
 
+    const matchesArray = getMultipleMatchesArray(props.data);
+
     return (
         <div>
-            <Modal show={show} closeModal={closeModal} person={person} tableData={props.data}/>
+            <Modal 
+                show={show} 
+                closeModal={closeModal} 
+                person={person} 
+                tableData={props.data} 
+                filtData={props.filtData} 
+                getMultipleMatchesArray={getMultipleMatchesArray} 
+                getMatchesByUser={getMatchesByUser}
+                calculate_age={calculate_age}
+            />
             
                 <table id="tableId">
                     <thead>
                         <tr>
-                            <th className="name-column">Name</th>
-                            <th className="age-column">Age</th>
+                            <th className="name-column">Naam</th>
+                            <th className="age-column">Leeftijd</th>
                             <th className="email-column">Email</th>
-                            <th className="hometown-column">Hometown</th>
-                            <th className="hobbies-column">Hobbies/Interest</th>
-                            <th className="buddy-column">Buddy or patient?</th>
-                            {/* <th className="name-column">Match</th> */}
+                            <th className="hometown-column">Woonplaats</th>
+                            <th className="hobbies-column">Hobby's / interesse</th>
+                            <th className="buddy-column">Buddy of patiënt?</th>
+                            <th className="match-column">Match</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                    {props.data.map( person => {
+                    {props.filtData.map( person => {
                         
                         itemId++;
                         
@@ -154,7 +266,7 @@ const AdminTable = props => {
                                 <td className="hometown-column">{person.hometown}</td>
                                 <td className="hobbies-column">{person.hobbiesandinterests}</td>
                                 <td className="buddy-column">{buddy_patient}</td>
-                                {/* <td className="name-column">{matchName}</td> */}
+                                <td className="name-column">{getMatchesByUser(person.id, person.im_a_buddy, matchesArray)}</td>
                             </tr>
                         )
                     }) } 

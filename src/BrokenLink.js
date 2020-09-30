@@ -1,6 +1,5 @@
 import React from 'react';
 import error404 from './Images/error404.png';
-import Footer from './Footer';
 import Header from './Header';
 
 const BrokenLink = () =>{
