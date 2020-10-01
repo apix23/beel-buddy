@@ -1,0 +1,751 @@
+/*--------------CSS Variables--------------*/
+/*Fonts*/
+/*Font sizes*/
+/*Colors*/
+/*------------For mobile devices------------*/
+@media screen and (max-width: 767px) {
+  .homepage h1 {
+    margin-top: 90px;
+  }
+  .homepage-button-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 50px;
+  }
+  a {
+    margin-top: 10px;
+  }
+  .logo {
+    margin-top: 0;
+  }
+  input, textarea {
+    width: 100%;
+    max-width: 300px;
+  }
+  .thank-you-container {
+    max-width: 300px;
+  }
+  .success-container {
+    padding: 15px;
+  }
+  .contact-you-container {
+    padding: 30px 0;
+  }
+  .contact-you-container p {
+    padding: 0 15px;
+  }
+}
+​
+/*------------For tablets------------*/
+@media screen and (max-width: 991px) {
+  .success-container {
+    padding: 20px 0;
+  }
+  .contact-you-container {
+    padding: 20px 20px;
+  }
+}
+​
+body {
+  background-color: #E5E5E5;
+  font-family: Roboto, sans-serif;
+  color: #333333;
+  margin: 0;
+}
+​
+header {
+  height: 100px;
+  border-bottom: 2px solid #A6ACBE;
+  background-color: #FFFFFF;
+}
+​
+.header-flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+​
+.logo {
+  width: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+​
+.margin-auto {
+  margin: auto;
+}
+​
+.main-container {
+  min-height: 100vh;
+}
+​
+.homepage h1 {
+  margin-top: 122px;
+}
+​
+.homepage h2 {
+  margin-top: 22px;
+}
+​
+.homepage-container {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  margin: auto;
+  color: #FFFFFF;
+}
+​
+.homepage-button-container {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+​
+.homepage-button-container .big-button {
+  width: 260px;
+  margin: 20px;
+}
+​
+.thank-you-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 43px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+​
+.success-container {
+  background-color: #16BC84;
+  color: #FFFFFF;
+  border-radius: 4px 4px 0 0;
+  padding: 50px 0 90px 0;
+}
+​
+.contact-you-container {
+  background-color: #FFFFFF;
+  border: 1px solid #16BC84;
+  padding: 45px 89px;
+}
+​
+.container-form h1, .container-form h2 {
+  margin: 16px 0 0 0;
+}
+​
+.container-form button {
+  margin: 34px auto 0 auto;
+}
+​
+.jumbotroncontainer {
+  width: 100%;
+  height: 500px;
+  background-image: url(../Images/viejita.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 25%;
+}
+​
+.title {
+  color: #00A1E2;
+}
+​
+.aboutus {
+  margin: 0 auto;
+  padding-top: 48px;
+  max-width: 990px;
+}
+​
+.aboutus h2, .aboutus h3 {
+  text-align: left;
+}
+​
+.error404 {
+  position: absolute;
+  width: 45%;
+  top: 30%;
+  left: 25%;
+}
+​
+/*--------------Importing the Roboto Font--------------*/
+@font-face {
+  font-family: Roboto;
+  src: url(Roboto-Regular.ttf);
+  font-weight: normal;
+}
+​
+h1 {
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+}
+​
+h2 {
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+}
+​
+h3 {
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+}
+​
+.base-text, p {
+  font-size: 16px;
+  line-height: 19px;
+}
+​
+.text-r {
+  text-align: right;
+}
+​
+.small-text {
+  font-size: 12px;
+  line-height: 14px;
+}
+​
+.color-p {
+  color: #00A1E2;
+}
+​
+.color-s {
+  color: #A6ACBE;
+}
+​
+.color-w {
+  color: #FFFFFF;
+}
+​
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+​
+.row *, .row *:before, .row *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+​
+.col-50 {
+  width: 50%;
+}
+​
+.col-70 {
+  width: 70%;
+}
+​
+.col-30 {
+  width: 30%;
+}
+​
+.col {
+  padding-right: 25px;
+}
+​
+.col:last-child {
+  padding-right: 0;
+}
+​
+@media (max-width: 600px) {
+  .col {
+    padding-right: 0;
+    width: 100%;
+  }
+}
+​
+.small-buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 30px;
+}
+​
+.link {
+  color: #00A1E2;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 10px;
+}
+​
+a, button, .button {
+  height: 48px;
+  width: 86px;
+  font-size: 16px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+}
+​
+.big-button {
+  width: 260px;
+  color: #FFFFFF;
+  background-color: #00A1E2;
+}
+​
+.small-button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 2px solid #00A1E2;
+  background-color: #FFFFFF;
+  color: #00A1E2;
+}
+​
+.small-button:hover, .small-button:focus {
+  -webkit-filter: brightness(95%);
+          filter: brightness(95%);
+}
+​
+.big-button:hover, .big-button:focus {
+  background-color: #0D82B1;
+}
+​
+label {
+  display: block;
+  margin: 16px 0 10px 0;
+}
+​
+input, textarea {
+  width: 340px;
+  height: 48px;
+  padding: 14px;
+  background: #FFFFFF;
+  border: 1px solid #A6ACBE;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+  color: #00A1E2;
+  font-size: 16px;
+}
+​
+::-webkit-input-placeholder {
+  color: #00A1E2;
+}
+​
+:-ms-input-placeholder {
+  color: #00A1E2;
+}
+​
+::-ms-input-placeholder {
+  color: #00A1E2;
+}
+​
+::placeholder {
+  color: #00A1E2;
+}
+​
+input:focus, textarea:focus {
+  outline: none;
+}
+​
+textarea {
+  height: 123px;
+  resize: none;
+}
+​
+.container-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 52px 0 98px 0;
+}
+​
+form {
+  margin-top: 42px;
+}
+​
+input[type="date"]::-webkit-inner-spin-button {
+  opacity: 0;
+}
+​
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background: url(https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/calendar-16.png) center/80% no-repeat;
+  color: rgba(0, 0, 0, 0);
+  opacity: 0.5;
+}
+​
+input[type=date] {
+  -moz-appearance: textfield;
+}
+​
+.im_a_buddy {
+  display: none;
+}
+​
+.formwrapper {
+  position: absolute;
+  z-index: -1;
+  width: 30%;
+  left: 35%;
+  top: 38%;
+  border-radius: 10px;
+}
+​
+.fadein1 {
+  opacity: 75%;
+}
+​
+.fadein2 {
+  opacity: 75%;
+}
+​
+.fadein3 {
+  opacity: 75%;
+}
+​
+.fadein4 {
+  opacity: 75%;
+}
+​
+.fadein5 {
+  opacity: 75%;
+}
+​
+table {
+  margin-top: 22px;
+  border-spacing: 0;
+}
+​
+.buddy td {
+  background-color: #CCECE1;
+}
+​
+th, td {
+  text-align: center;
+  height: 55px;
+  cursor: pointer;
+}
+​
+thead {
+  background-color: #FFFFFF;
+}
+​
+td, thead {
+  border-bottom: 1px solid #A6ACBE;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+​
+.match-column {
+  width: 200px;
+  max-width: 200px;
+}
+​
+.name-column, .hometown-column {
+  width: 130px;
+  max-width: 130px;
+}
+​
+.age-column {
+  width: 65px;
+  max-width: 65px;
+}
+​
+.email-column, .hobbies-column, .buddy-column {
+  width: 200px;
+  max-width: 200px;
+}
+​
+.table-button-container {
+  width: 580px;
+  margin: 33px 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+}
+​
+.table-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 48px;
+  padding: 0 12px;
+  width: auto;
+  border: 2px solid #00A1E2;
+  border-radius: 4px;
+  color: #00A1E2;
+  cursor: pointer;
+}
+​
+.table-button > input {
+  margin: 0 5px 0 0;
+  width: auto;
+}
+​
+.table-button > input:checked + label {
+  background-color: pink;
+}
+​
+label.table-button {
+  text-shadow: none;
+}
+​
+th:first-child {
+  padding-left: 20px;
+}
+​
+th:last-child {
+  padding-right: 20px;
+}
+​
+select {
+  width: 100%;
+  border: none;
+  background: none;
+  height: 26px;
+  font-size: 16px;
+}
+​
+select:focus {
+  outline: none;
+}
+​
+.border-b {
+  border-bottom: 1px solid #A6ACBE;
+}
+​
+.card {
+  border-radius: 10px;
+  padding: 35px;
+  background: #FFFFFF;
+}
+​
+.modalcontainer {
+  position: absolute;
+  width: 550px;
+  height: auto;
+  top: 50%;
+  margin-top: -240px;
+  margin-left: -275px;
+  left: 50%;
+  border-radius: 6px;
+  border: 1px solid #16BC84;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0 40px;
+}
+​
+.modalcontainer p {
+  margin: 10px 0;
+}
+​
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #333333;
+  opacity: 0.75;
+  z-index: 1;
+}
+​
+.modal-props {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+​
+.modalp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 203px;
+}
+​
+.modalp .modalp:last-child {
+  padding-bottom: 10px;
+}
+​
+.modal-head {
+  width: 100%;
+  text-align: left;
+  margin: 69px 32px 0 18px !important;
+}
+​
+.btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 320px;
+  margin: 32px 0 10px 0;
+  height: 48px;
+  padding-left: 10px;
+}
+​
+.delete {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 2px solid #E72E2A;
+  background-color: #FFFFFF;
+  color: #E72E2A;
+}
+​
+.match-btn {
+  width: 218px;
+  background: #00A1E2;
+  color: #FFFFFF;
+  border: 2px solid #00A1E2;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+}
+​
+.close-btn {
+  position: absolute;
+  left: 92%;
+  right: 10%;
+  top: 5%;
+  bottom: 95%;
+  font-size: large;
+  color: #00A1E2;
+  cursor: pointer;
+}
+​
+.match-btn, .delete {
+  margin: 0 !important;
+}
+​
+.hobbiebox {
+  overflow-x: scroll auto;
+  overflow-y: scroll auto;
+  border-bottom: 1px solid #c4c4c4;
+  border-bottom: 0%;
+  width: 438px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+​
+.textrows {
+  padding-top: 0%;
+  padding-bottom: 0%;
+}
+​
+.footer {
+  position: relative;
+  margin-top: 48px;
+  padding: 24px 0 12px 0;
+  height: 50px;
+  max-width: 100%;
+  background-color: #333333;
+}
+​
+.footer a {
+  margin: 0;
+  height: 0;
+  width: 0;
+  display: inline-block;
+  position: absolute;
+}
+​
+.universidad {
+  left: 24px;
+}
+​
+.universidad img {
+  width: 107px;
+  height: auto;
+}
+​
+.migracode {
+  right: 132px;
+}
+​
+.migracode img {
+  width: 107px;
+  height: auto;
+}
+
+
+
+

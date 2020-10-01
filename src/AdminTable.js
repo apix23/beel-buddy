@@ -3,7 +3,7 @@ import Modal from './Modal';
 import HeaderAdmin from './HeaderAdmin';
 import { Redirect } from 'react-router-dom';
 
-const baseUrl = "http://localhost:9000/";
+const baseUrl = "https://beel-buddy-backend.herokuapp.com/";
 
 const AdminTableFetcher = props => {
     const [tableData, setTableData] = React.useState(null);
