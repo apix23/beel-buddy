@@ -1,0 +1,53 @@
+  .small-buttons-container{
+    display: flex;
+    align-items: center;
+    margin-right: 30px ;
+  }
+  
+  .link{
+    color : $primary;
+    text-decoration: none;
+    text-align: center;
+    margin-right: 10px;
+  }
+  
+  a, button, .button {
+    height: 48px;
+    width: 86px;
+  
+    font-size: $base-text;
+    border-radius: 4px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  
+    border: 0;
+
+    cursor: pointer;
+  }
+  
+  .big-button {
+    width: 260px;
+  
+    color: $white;
+    background-color: $primary;
+  }
+  
+  .small-button {
+    box-sizing: border-box;
+    
+    border: 2px solid $primary;
+    background-color: $white;
+    color: $primary;
+  }
+  
+  .small-button:hover, .small-button:focus {
+    filter: brightness(95%);
+  }
+  
+  .big-button:hover, .big-button:focus {
+    background-color: $dark-primary;
+  }
+  

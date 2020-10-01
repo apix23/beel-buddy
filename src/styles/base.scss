@@ -1,0 +1,38 @@
+body {
+    background-color: $background;
+    font-family: $font;
+    color: $base;
+    margin: 0;
+  }
+  
+  header{
+    height: 100px;
+    border-bottom: 2px solid $secondary;
+    background-color: $white;
+  }
+  
+  .header-flex-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    
+  }
+  
+  .logo{
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+    cursor: pointer;
+  }
+
+  
+.margin-auto {
+    margin: auto;
+  }
+
+  .main-container {
+    min-height: 100vh;
+  }

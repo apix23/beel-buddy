@@ -1,12 +1,13 @@
 import React from 'react';
-import "./directoring.css";
+import "./styles/directoring.scss";
 import BuddiesForm from "./BuddiesForm";
 import StudentForm from "./StudentForm"
 import Homepage from './Homepage';
 import ThankYou from './ThankYou';
 import Login from './Login';
 import Footer from "./Footer";
-import BrokenLink from './BrokenLink';
+import BrokenLink from './BrokenLink'
+import ProtectedRoute from './ProtectedRoute';
 
 import {
   BrowserRouter as Router,

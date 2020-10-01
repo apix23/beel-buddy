@@ -1,0 +1,109 @@
+.modalcontainer{
+  position: absolute;
+  width: 550px;
+  height: auto;
+  top: 50%;
+  margin-top: -240px;
+  margin-left: -275px;
+  left: 50%;
+  border-radius: 6px;
+  border: 1px solid $success;
+  box-sizing: border-box;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap; 
+  padding: 0 40px;
+
+  p {
+    margin: 10px 0;
+  }
+
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #333333;
+  opacity: 0.75;
+  z-index: 1;
+}
+
+.modal-props {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.modalp {
+  display: flex;
+  flex-direction: column;
+  width: 203px;
+
+  .modalp:last-child { padding-bottom: 10px; }
+}
+
+.modal-head{
+  width:100%;
+  text-align: left;
+  margin: 69px 32px 0 18px !important;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width:320px;
+    margin: 32px 0 10px 0;
+    height: 48px;
+    padding-left: 10px;
+}
+
+.delete {
+  box-sizing: border-box;
+  
+  border: 2px solid $error;
+  background-color: $white;
+  color: $error;
+}
+
+.match-btn {
+  width:218px;
+  background: $primary;
+  color:$white;
+  
+  border: 2px solid $primary;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.close-btn{
+  position: absolute;
+  left: 92%;
+  right: 10%;
+  top: 5%;
+  bottom: 95%;
+  font-size: large;
+  color: $primary;
+  cursor: pointer;
+}
+
+.match-btn, .delete {
+  margin: 0 !important;
+}
+
+.hobbiebox{
+  overflow-x: scroll auto;
+  overflow-y: scroll auto;
+  border-bottom: 1px solid #c4c4c4;
+  border-bottom: 0%;
+  width: 438px;
+  height: fit-content;
+}
+
+.textrows {
+  padding-top: 0%;
+  padding-bottom: 0%; 
+}

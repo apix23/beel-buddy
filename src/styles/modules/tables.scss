@@ -1,0 +1,99 @@
+table {
+    margin-top: 22px;
+    border-spacing: 0;
+}
+
+.buddy td {
+    background-color: $table-buddy-row;
+}
+
+th, td {
+    text-align: center;
+    height: 55px;
+    cursor: pointer;
+}
+
+thead {
+    background-color: $white;
+}
+
+td, thead {
+    border-bottom: 1px solid $secondary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.match-column {
+    width: 200px;
+    max-width: 200px;
+}
+
+.name-column, .hometown-column {
+    width: 130px;
+    max-width: 130px;
+}
+
+.age-column {
+    width: 65px;
+    max-width: 65px;
+}
+
+.email-column, .hobbies-column, .buddy-column {
+    width: 200px;
+    max-width: 200px;
+}
+
+.table-button-container {
+    width: 580px;
+    margin: 33px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.table-button {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    padding: 0 12px; 
+    width: auto;
+    border: 2px solid $primary;
+    border-radius: 4px;
+    color: $primary;
+    cursor: pointer;
+}
+
+.table-button > input {
+    margin: 0 5px 0 0;
+    width: auto;
+}
+
+.table-button > input:checked + label {
+    background-color: pink;
+}
+
+label.table-button {
+    text-shadow: none;
+}
+
+th:first-child {
+    padding-left: 20px;
+}
+
+th:last-child {
+    padding-right: 20px;
+}
+
+select {
+    width: 100%;
+    border: none;
+    background: none;
+    height: 26px;
+    font-size: 16px;
+
+}
+
+select:focus {
+    outline: none; 
+}
