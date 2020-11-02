@@ -97,7 +97,7 @@ const AdminTableFetcher = props => {
                 <HeaderAdmin />
 
                 <div className="container-form">
-                    <h1>Table of participants</h1>
+                    <h1>Tafel met deelnemers</h1>
 
                     <form className="table-button-container">
                         <label className="table-button" onClick={seeBuddies}>
@@ -240,7 +240,11 @@ const AdminTable = props => {
                             <th className="hometown-column">Woonplaats</th>
                             <th className="hobbies-column">Hobby's / interesse</th>
                             <th className="buddy-column">Buddy of patiënt?</th>
+<<<<<<< HEAD
                             <th className="match-column">Match</th>
+=======
+                            {/* <th className="name-column">Match</th> */}
+>>>>>>> 71e45337f06f9ab38437f2606c346839f2cd0c53
                         </tr>
                     </thead>
 

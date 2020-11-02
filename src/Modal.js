@@ -185,7 +185,7 @@ const Modal = ({person, show, closeModal, tableData, getMultipleMatchesArray, ge
 
               <div className="modalp underlined">
                 <div className="textrows">
-                  <p> <b>Geboorteplaats:</b> </p> 
+                  <p> <b>Woonplaats:</b> </p> 
                   <p className="border-b">{person.hometown}</p>
                 </div>
               </div>
@@ -197,19 +197,32 @@ const Modal = ({person, show, closeModal, tableData, getMultipleMatchesArray, ge
                 </div>
               </div>
 
+<<<<<<< HEAD
               {/* <div className="modalp underlined">
                 <div className="textrows">
                   <p><b> Studie: </b></p>
                   <p className="border-b"> 0</p>
+=======
+              <div className="modalp underlined">
+                <div className="textrows">
+                  <p><b> Studie: </b></p>
+                  <p> {person.study} </p>
+>>>>>>> 71e45337f06f9ab38437f2606c346839f2cd0c53
                 </div>
               </div>
 
               <div className="modalp underlined">
                 <div className="textrows">
                   <p><b> Studiejaar: </b></p>
+<<<<<<< HEAD
                   <p className="border-b"> 0</p>
                 </div>
               </div> */}
+=======
+                  <p> {person.studyYear} </p>
+                </div>
+              </div>
+>>>>>>> 71e45337f06f9ab38437f2606c346839f2cd0c53
 
               <div className="hobbiebox underlined">
                 <div className="textrows">
@@ -218,7 +231,11 @@ const Modal = ({person, show, closeModal, tableData, getMultipleMatchesArray, ge
                 </div>
               </div>
 
+<<<<<<< HEAD
               {console.log("GetMatchesByUser of ", person.id, "isABuddy", person.im_a_buddy, "with the array being", matchesArray, "is ", getMatchesByUser(person.id, person.im_a_buddy, matchesArray))}
+=======
+
+>>>>>>> 71e45337f06f9ab38437f2606c346839f2cd0c53
 
               <div className="hobbiebox underlined">
                 <div className="textrows">
