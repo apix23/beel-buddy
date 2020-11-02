@@ -240,11 +240,8 @@ const AdminTable = props => {
                             <th className="hometown-column">Woonplaats</th>
                             <th className="hobbies-column">Hobby's / interesse</th>
                             <th className="buddy-column">Buddy of patiënt?</th>
-<<<<<<< HEAD
                             <th className="match-column">Match</th>
-=======
                             {/* <th className="name-column">Match</th> */}
->>>>>>> 71e45337f06f9ab38437f2606c346839f2cd0c53
                         </tr>
                     </thead>
 
