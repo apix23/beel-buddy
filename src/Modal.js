@@ -35,7 +35,7 @@ const Modal = ({person, show, closeModal, tableData, getMultipleMatchesArray, ge
   }
 
   //Function to make the fetch of making a new match 
-  const fetchNewMatch = (user1, user2) => {
+  const fetchNewMatch = (user1, user2) => { 
     console.log("Inside fetchNewMatch receiving user1", user1, "user2", user2);
     const data = {
       isBuddy_u1: user1.isBuddy,
@@ -51,11 +51,11 @@ const Modal = ({person, show, closeModal, tableData, getMultipleMatchesArray, ge
       body: JSON.stringify(data), 
       headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json'
       }
     })
-    .catch( error => console.error("Error: ", error))
     .then( response => console.log("Success:", response) )
+    // .then(window.location.reload())
+    .catch( error => console.error("Error: ", error))
   }
 
   //Function to make the fetch of disabling an existent match and creating a new one
@@ -132,8 +132,10 @@ const Modal = ({person, show, closeModal, tableData, getMultipleMatchesArray, ge
       console.log("The user didn't select an option")
     }
 
-    closeModal();
-    window.location.reload();
+    setTimeout(() => {
+      closeModal();
+      window.location.reload();
+    }, 250);
 
   }
 
@@ -197,32 +199,19 @@ const Modal = ({person, show, closeModal, tableData, getMultipleMatchesArray, ge
                 </div>
               </div>
 
-<<<<<<< HEAD
-              {/* <div className="modalp underlined">
-                <div className="textrows">
-                  <p><b> Studie: </b></p>
-                  <p className="border-b"> 0</p>
-=======
               <div className="modalp underlined">
                 <div className="textrows">
                   <p><b> Studie: </b></p>
                   <p> {person.study} </p>
->>>>>>> 71e45337f06f9ab38437f2606c346839f2cd0c53
                 </div>
               </div>
 
               <div className="modalp underlined">
                 <div className="textrows">
                   <p><b> Studiejaar: </b></p>
-<<<<<<< HEAD
-                  <p className="border-b"> 0</p>
-                </div>
-              </div> */}
-=======
                   <p> {person.studyYear} </p>
                 </div>
               </div>
->>>>>>> 71e45337f06f9ab38437f2606c346839f2cd0c53
 
               <div className="hobbiebox underlined">
                 <div className="textrows">
@@ -231,11 +220,7 @@ const Modal = ({person, show, closeModal, tableData, getMultipleMatchesArray, ge
                 </div>
               </div>
 
-<<<<<<< HEAD
               {console.log("GetMatchesByUser of ", person.id, "isABuddy", person.im_a_buddy, "with the array being", matchesArray, "is ", getMatchesByUser(person.id, person.im_a_buddy, matchesArray))}
-=======
-
->>>>>>> 71e45337f06f9ab38437f2606c346839f2cd0c53
 
               <div className="hobbiebox underlined">
                 <div className="textrows">
