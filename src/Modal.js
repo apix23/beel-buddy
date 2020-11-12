@@ -35,7 +35,7 @@ const Modal = ({person, show, closeModal, tableData, getMultipleMatchesArray, ge
   }
 
   //Function to make the fetch of making a new match 
-  const fetchNewMatch = (user1, user2) => {
+  const fetchNewMatch = (user1, user2) => { 
     console.log("Inside fetchNewMatch receiving user1", user1, "user2", user2);
     const data = {
       isBuddy_u1: user1.isBuddy,
@@ -51,11 +51,11 @@ const Modal = ({person, show, closeModal, tableData, getMultipleMatchesArray, ge
       body: JSON.stringify(data), 
       headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json'
       }
     })
-    .catch( error => console.error("Error: ", error))
     .then( response => console.log("Success:", response) )
+    // .then(window.location.reload())
+    .catch( error => console.error("Error: ", error))
   }
 
   //Function to make the fetch of disabling an existent match and creating a new one
@@ -132,8 +132,10 @@ const Modal = ({person, show, closeModal, tableData, getMultipleMatchesArray, ge
       console.log("The user didn't select an option")
     }
 
-    closeModal();
-    window.location.reload();
+    setTimeout(() => {
+      closeModal();
+      window.location.reload();
+    }, 250);
 
   }
 

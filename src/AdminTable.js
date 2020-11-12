@@ -10,16 +10,13 @@ const AdminTableFetcher = props => {
     const [mainArray, setMainArray] = React.useState(null);
 
     const token = localStorage.getItem("token");
-    console.log(token);
+    // console.log(token);
 
     const  [loggedIn, setLoggedIn] = useState(true);
     
-        useEffect(() => {
-            if (token === null) {
-                
-                setLoggedIn(false)
-                }
-        }, [token])
+    useEffect(() => {
+        if (token === null) setLoggedIn(false)
+    }, [token])
 
     const seeBuddies = () => {
         const filteredData = mainArray.filter( element => element.im_a_buddy === 1);
@@ -141,7 +138,7 @@ const AdminTable = props => {
 
     //This function returns an array with the matchnames for each person
     const getMultipleMatchesArray = (tableData) => {
-        console.log("entering in getmultiplematchesarray with tabledata", tableData);
+        // console.log("entering in getmultiplematchesarray with tabledata", tableData);
         if(tableData) {
             //Array with the number of occurrences for each person
         const occurrenceNumArr = [];
@@ -184,10 +181,10 @@ const AdminTable = props => {
 
     //This function returns all the matches for an user
     const getMatchesByUser = (id, isBuddy, arr) => {
-    console.log("im receiving the following values. id", id, "isBuddy", isBuddy, "arr", arr);
+    // console.log("im receiving the following values. id", id, "isBuddy", isBuddy, "arr", arr);
     if(id != undefined && isBuddy != undefined && arr != undefined){
         const matches = arr.find(element => element.id === id && element.isBuddy == isBuddy).matches; 
-        console.log(`The matches for the id ${id} and isBuddy ${isBuddy} are: ${matches}`);
+        // console.log(`The matches for the id ${id} and isBuddy ${isBuddy} are: ${matches}`);
         
         return matches;
     }
@@ -241,7 +238,6 @@ const AdminTable = props => {
                             <th className="hobbies-column">Hobby's / interesse</th>
                             <th className="buddy-column">Buddy of patiënt?</th>
                             <th className="match-column">Match</th>
-                            {/* <th className="name-column">Match</th> */}
                         </tr>
                     </thead>
 
@@ -267,7 +263,7 @@ const AdminTable = props => {
                                 <td className="hometown-column">{person.hometown}</td>
                                 <td className="hobbies-column">{person.hobbiesandinterests}</td>
                                 <td className="buddy-column">{buddy_patient}</td>
-                                <td className="name-column">{getMatchesByUser(person.id, person.im_a_buddy, matchesArray)}</td>
+                                <td className="match-column">{getMatchesByUser(person.id, person.im_a_buddy, matchesArray)}</td>
                             </tr>
                         )
                     }) } 

@@ -520,6 +520,11 @@ th:last-child {
   padding-right: 20px;
 }
 
+.match-column {
+  width: 200px;
+  max-width: 200px;
+}
+
 select {
   width: 100%;
   border: none;
