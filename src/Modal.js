@@ -28,8 +28,10 @@ const Modal = ({person, show, closeModal, tableData, getMultipleMatchesArray, ge
     .catch( error => console.error("Error: ", error))
     .then( response => console.log("Success:", response) )
     
-    closeModal();
-    history.push("/AdminTable");
+    setTimeout(() => {
+      closeModal();
+      window.location.reload();
+    }, 250);
 
     //window.location.reload();
   }
